@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { X, Upload, CheckCircle, Loader } from 'lucide-react'
+import { X, Loader } from 'lucide-react'
 import { scrapeAirbnbListing } from '../../utils/airbnbScraper'
 
 interface AddListingModalProps {
