@@ -97,7 +97,38 @@ const PropertyDetails: React.FC<PropertyDetailsProps> = ({ properties, setProper
               property.name
             )}
           </h1>
-          {/* ... (rest of the property details) */}
+          <p className="text-gray-600 mb-4">
+            {isEditing ? (
+              <textarea
+                name="description"
+                value={property.description}
+                onChange={handleChange}
+                className="w-full p-2 border rounded"
+              />
+            ) : (
+              property.description
+            )}
+          </p>
+          <div className="mb-4">
+            <h2 className="text-xl font-semibold mb-2">Features</h2>
+            <ul className="list-disc list-inside">
+              {property.features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="mb-4">
+            <h2 className="text-xl font-semibold mb-2">Listing Rules</h2>
+            <p>{property.listingRules}</p>
+          </div>
+          <div className="mb-4">
+            <h2 className="text-xl font-semibold mb-2">Entrance Instructions</h2>
+            <p>{property.entranceInstructions}</p>
+          </div>
+          <div>
+            <h2 className="text-xl font-semibold mb-2">Location</h2>
+            <p>{property.location}</p>
+          </div>
         </div>
       </div>
 

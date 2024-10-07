@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-airbnb-red: 255, 90, 95;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -19,4 +25,16 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.bg-airbnb-red {
+  background-color: rgb(var(--color-airbnb-red));
+}
+
+.text-airbnb-red {
+  color: rgb(var(--color-airbnb-red));
+}
+
+.hover\:bg-airbnb-red:hover {
+  background-color: rgb(var(--color-airbnb-red));
 }
