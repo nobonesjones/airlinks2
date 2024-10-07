@@ -1,27 +1,26 @@
-import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { AuthProvider } from './contexts/AuthContext'
-import LandingPage from './components/LandingPage'
-import HostDashboard from './components/host/HostDashboard'
 import GuestApp from './components/guest/GuestApp'
-import SignUp from './components/SignUp'
+import LandingPage from './components/LandingPage'
 import Login from './components/Login'
+import SignUp from './components/SignUp'
+import HostDashboard from './components/host/HostDashboard'
+import { AuthProvider } from './contexts/AuthContext'
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
+    <Router>
+      <AuthProvider>
         <div className="min-h-screen bg-gray-100">
           <Routes>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="/host/*" element={<HostDashboard />} />
             <Route path="/guest/:propertyId" element={<GuestApp />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
-      </Router>
-    </AuthProvider>
+      </AuthProvider>
+    </Router>
   )
 }
 
