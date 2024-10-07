@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'airbnb-red': 'rgb(var(--color-airbnb-red) / <alpha-value>)',
+      },
+    },
   },
   plugins: [],
 }
